@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - WebMaster Studio</title>
+    <link rel="stylesheet" href="button6.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="myVideo">
+            <source src="Live.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="form-container">
+            <h1>Let's Start Your Project</h1>
+            <p class="form-description">The project duration depends on the complexity of the project. If it is something very simple and we are available it may take a day or two to run on our server but if it is something very complex such as a shopping website with all the back end it may take several weeks </p>
+            
+            <form id="projectForm" class="project-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="websiteType">Type of Website</label>
+                    <select id="websiteType" name="websiteType" required class="custom-select">
+                        <option value="">Select website type</option>
+                        <option value="e-commerce">E-commerce Website</option>
+                        <option value="portfolio">Portfolio Website</option>
+                        <option value="corporate">Corporate Website</option>
+                        <option value="landing">Landing Page</option>
+                        <option value="blog">Blog Website</option>
+                        <option value="news">News & Magazine Website</option>
+                        <option value="real-estate">Real Estate Website</option>
+                        <option value="e-learning">E-learning Website</option>
+                        <option value="social-media">Social Media Website</option>
+                        <option value="event">Event Website</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Estimated Budget (€)</label>
+                    <div class="budget-slider-container">
+                        <input type="range" id="budget" name="budget" 
+                               min="125" max="4000" step="125" 
+                               value="1000" class="budget-slider">
+                        <div class="budget-value">€<span id="budgetValue">1000</span></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">What do you have in mind for your project?</label>
+                    <textarea id="message" name="message" rows="4" 
+                              placeholder="Tell us about your vision, goals, and any specific features you'd like..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Send Project Request</span>
+                    <span class="btn-shine"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <button id="scrollToTop" class="scroll-to-top" title="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="button6.js"></script>
+
+</body>
+</html>

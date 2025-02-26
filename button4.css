@@ -1,0 +1,85 @@
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#myVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Overlay foarte transparent */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.website-section,
+.integration-section,
+.animation-section,
+.innovation-section {
+    background: rgba(32, 32, 32, 0.4);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem 0;
+    width: 100%;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+/* Efect hover opțional pentru interactivitate */
+.website-section:hover,
+.integration-section:hover,
+.animation-section:hover,
+.innovation-section:hover {
+    background: rgba(32, 32, 32, 0.6); /* Puțin mai opac la hover */
+}
+
+h2 {
+    color: #4da6ff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    color: #ffffff;
+    line-height: 1.6;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}

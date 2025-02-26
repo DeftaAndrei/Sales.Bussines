@@ -1,0 +1,469 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #4da6ff rgba(32, 32, 32, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    padding: 2rem;
+    position: relative;
+    background-color: #0d254d;
+}
+
+/* Stilizare pentru WebKit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(32, 32, 32, 0.2);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #4da6ff;
+    border-radius: 10px;
+    border: 3px solid rgba(32, 32, 32, 0.2);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #2d86ff;
+}
+
+.video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-background video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    background: linear-gradient(
+        135deg,
+        rgba(13, 37, 77, 0.6) 0%,
+        rgba(13, 37, 77, 0.4) 100%
+    );
+    z-index: -1;
+    border-radius: 15px;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    min-height: 150vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(13, 37, 77, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        0 4px 8px rgba(32, 188, 255, 0.1),
+        inset 0 0 80px rgba(32, 188, 255, 0.05);
+    animation: formAppear 0.8s ease-out;
+}
+
+@keyframes formAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 
+        0 0 10px rgba(32, 188, 255, 0.8),
+        0 0 20px rgba(32, 188, 255, 0.4),
+        0 0 30px rgba(32, 188, 255, 0.2);
+    animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse {
+    from {
+        text-shadow: 
+            0 0 10px rgba(32, 188, 255, 0.8),
+            0 0 20px rgba(32, 188, 255, 0.4),
+            0 0 30px rgba(32, 188, 255, 0.2);
+    }
+    to {
+        text-shadow: 
+            0 0 15px rgba(32, 188, 255, 0.9),
+            0 0 25px rgba(32, 188, 255, 0.5),
+            0 0 35px rgba(32, 188, 255, 0.3),
+            0 0 45px rgba(32, 188, 255, 0.1);
+    }
+}
+
+.form-description {
+    text-align: center;
+    color: #ffffff;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 0 0 10px rgba(32, 188, 255, 0.5);
+    max-width: 540px;
+    padding: 0 1rem;
+}
+
+.project-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 0 0 8px rgba(32, 188, 255, 0.6);
+}
+
+input, select, textarea {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(32, 188, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 10px rgba(32, 188, 255, 0.1);
+}
+
+input:focus, select:focus, textarea:focus {
+    background: rgba(32, 188, 255, 0.1);
+    border-color: rgba(32, 188, 255, 0.4);
+    box-shadow: 
+        0 0 15px rgba(32, 188, 255, 0.2),
+        inset 0 0 10px rgba(32, 188, 255, 0.1);
+}
+
+.budget-slider-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.budget-slider {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    background: rgba(32, 188, 255, 0.2);
+    border-radius: 3px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(32, 188, 255, 0.2);
+}
+
+.budget-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 10px rgba(32, 188, 255, 0.8),
+        0 0 20px rgba(32, 188, 255, 0.4);
+}
+
+.budget-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(32, 188, 255, 0.7);
+}
+
+.budget-value {
+    min-width: 100px;
+    padding: 0.5rem 1rem;
+    background: rgba(32, 188, 255, 0.1);
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(32, 188, 255, 0.8);
+    box-shadow: 
+        0 0 10px rgba(32, 188, 255, 0.2),
+        inset 0 0 5px rgba(32, 188, 255, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    position: relative;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, rgba(32, 188, 255, 0.8), rgba(26, 109, 255, 0.8));
+    border: 1px solid rgba(32, 188, 255, 0.4);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 20px rgba(32, 188, 255, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(45deg, rgba(32, 188, 255, 0.9), rgba(26, 109, 255, 0.9));
+    box-shadow: 
+        0 0 30px rgba(32, 188, 255, 0.4),
+        inset 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.btn-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: btnShine 3s infinite;
+}
+
+@keyframes btnShine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 1rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .form-description {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .budget-slider-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .budget-value {
+        align-self: center;
+    }
+}
+
+/* Animații pentru focus și hover */
+input:not([type="range"]):hover,
+select:hover,
+textarea:hover {
+    border-color: rgba(32, 188, 255, 0.5);
+}
+
+/* Efecte pentru validare */
+input:valid,
+select:valid,
+textarea:valid {
+    border-color: rgba(32, 188, 255, 0.5);
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border-color: rgba(255, 99, 71, 0.5);
+}
+
+/* Optimizări pentru dispozitive cu densitate mare de pixeli */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .form-container {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
+}
+
+.custom-select {
+    position: relative;
+    cursor: pointer;
+    padding-right: 2.5rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #20bcff 50%),
+                      linear-gradient(135deg, #20bcff 50%, transparent 50%);
+    background-position: calc(100% - 20px) center,
+                         calc(100% - 15px) center;
+    background-size: 5px 5px,
+                    5px 5px;
+    background-repeat: no-repeat;
+}
+
+.custom-select option {
+    background-color: rgba(13, 37, 77, 0.95);
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(32, 188, 255, 0.2);
+}
+
+.custom-select option:hover,
+.custom-select option:focus,
+.custom-select option:checked {
+    background: linear-gradient(45deg, rgba(32, 188, 255, 0.2), rgba(13, 37, 77, 0.95));
+    color: #20bcff;
+}
+
+.custom-select:focus {
+    border-color: #20bcff;
+    box-shadow: 0 0 15px rgba(32, 188, 255, 0.3);
+    outline: none;
+}
+
+/* Stilizare pentru Firefox */
+.custom-select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #ffffff;
+}
+
+/* Stilizare pentru IE */
+.custom-select::-ms-expand {
+    display: none;
+}
+
+/* Ajustări pentru mobile */
+@media (max-width: 768px) {
+    .custom-select {
+        font-size: 16px; /* Previne zoom-ul pe iOS */
+    }
+    
+    .custom-select option {
+        padding: 0.8rem;
+    }
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(32, 188, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(32, 188, 255, 0.3);
+    z-index: 1000;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background: rgba(32, 188, 255, 1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(32, 188, 255, 0.4);
+}
+
+.scroll-to-top svg {
+    transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover svg {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}

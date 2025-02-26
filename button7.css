@@ -1,0 +1,128 @@
+body {
+    background: #f5f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.intro {
+
+    margin: 0 auto 3rem;
+    text-align: center;
+    line-height: 1.6;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.service-section {
+    background: #1a1f35;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.service-title {
+    background: #2a3449;
+    color: #ffffff;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 3px solid #00b7ff;
+    box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.service-title:hover {
+    box-shadow: 0 0 20px rgba(0, 183, 255, 0.8);
+    background: #344263;
+}
+
+.service-content {
+    padding: 1.5rem;
+    display: none;
+    background: #1a1f35;
+    color: #e0e0e0;
+}
+
+.service-content.active {
+    display: block;
+}
+
+.service-description {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 0.5rem 0;
+    color: #b8b8b8;
+}
+
+.features {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-item {
+    background: #2a3449;
+    color: #ffffff;
+    padding: 1.2rem;
+    border: 3px solid #00b7ff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    box-shadow: 0 0 20px rgba(0, 183, 255, 0.8);
+    background: #344263;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .feature-item:last-child {
+        border-bottom: none;
+    }
+}
