@@ -172,4 +172,199 @@ a:hover {
     .contact-details {
         gap: 0.8rem;
     }
+
+    body::before {
+        width: 100%;
+        height: 200px;
+        filter: blur(20px);
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    }
+
+    .content {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        min-height: 50vh;
+        border-radius: 20px 20px 0 0;
+        padding: 1rem;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    h1 {
+        font-size: clamp(1.2rem, 5vw, 1.6rem);
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: clamp(1.1rem, 4vw, 1.5rem);
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: clamp(1rem, 3.5vw, 1.2rem);
+    }
+
+    p, a {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+    }
+
+    .contact-section {
+        padding: 0.8rem;
+    }
+
+    .contact-details {
+        gap: 0.6rem;
+    }
+
+    .contact-item {
+        padding: 0.8rem;
+        touch-action: manipulation;
+        min-height: 44px;
+    }
+
+    /* Îmbunătățire pentru performanță */
+    .content {
+        will-change: transform;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    /* Îmbunătățire pentru touch targets */
+    .contact-item {
+        padding: 12px;
+        margin-bottom: 8px;
+        min-height: 54px; /* Mărit pentru touch mai ușor */
+    }
+
+    /* Îmbunătățire pentru text selection */
+    p, a {
+        -webkit-tap-highlight-color: rgba(0, 255, 255, 0.2);
+        user-select: text;
+    }
+}
+
+/* Small phones optimization */
+@media (max-width: 480px) {
+    .content {
+        padding: 0.8rem;
+    }
+
+    .contact-section {
+        padding: 0.6rem;
+    }
+
+    .contact-item {
+        margin-bottom: 0.4rem;
+    }
+
+    /* Reduce animation intensity */
+    .contact-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            0 3px 10px rgba(0, 255, 255, 0.15),
+            0 3px 10px rgba(255, 140, 0, 0.15);
+    }
+}
+
+/* Optimizare pentru device-uri foarte mici */
+@media screen and (max-width: 320px) {
+    .content {
+        padding: 0.6rem;
+    }
+
+    h1 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-details {
+        gap: 0.4rem;
+    }
+}
+
+/* Landscape mode optimization */
+@media (max-height: 480px) and (orientation: landscape) {
+    .content {
+        height: 100vh;
+        bottom: 0;
+    }
+
+    .contact-details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+}
+
+/* Touch device optimization */
+@media (hover: none) {
+    .contact-item:hover {
+        transform: none;
+    }
+
+    .contact-item:active {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Battery saving mode */
+@media (prefers-reduced-motion: reduce) {
+    .contact-item {
+        transition: none;
+    }
+
+    .contact-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    @keyframes glowPulse {
+        from, to {
+            box-shadow: none;
+        }
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+    .contact-item {
+        border: 2px solid #ffffff;
+    }
+
+    h1, h2, h3 {
+        text-shadow: none;
+    }
+}
+
+/* Safe area insets for notched phones */
+@supports (padding: max(0px)) {
+    .content {
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
+
+/* Optimizare pentru device-uri cu notch */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .content {
+        padding-top: max(1rem, env(safe-area-inset-top));
+    }
+}
+
+/* Optimizare pentru gesture navigation */
+@media (pointer: coarse) {
+    .contact-section {
+        padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+}
+
+/* Îmbunătățire pentru smooth scrolling pe iOS */
+@supports (-webkit-touch-callout: none) {
+    .contact-section {
+        -webkit-overflow-scrolling: touch;
+    }
 }
