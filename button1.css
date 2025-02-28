@@ -128,3 +128,136 @@ body {
 .header h1 .letter-animation {
     animation: dropIn 0.5s forwards, glow 2s ease-in-out infinite alternate;
 }
+
+/* Mobile First Approach */
+@media screen and (max-width: 1200px) {
+    .benefits-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 3rem;
+    }
+
+    .header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .benefits-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .header {
+        padding: 2rem 1rem;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .header h2 {
+        font-size: 1.4rem;
+        margin-top: 0.8rem;
+    }
+
+    .benefit-item {
+        padding: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .benefit-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .benefit-item p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header h2 {
+        font-size: 1.2rem;
+    }
+
+    .benefit-item {
+        padding: 1rem;
+    }
+
+    .benefit-item h3 {
+        font-size: 1rem;
+    }
+
+    .benefit-item p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 5px rgba(32, 188, 255, 0.4);
+        }
+        to {
+            text-shadow: 0 0 10px rgba(32, 188, 255, 0.6);
+        }
+    }
+}
+
+/* Optimizare pentru dispozitive touch */
+@media (hover: none) {
+    .benefit-item:hover {
+        transform: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Optimizare pentru landscape pe mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .benefits-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    .header {
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .header h2 {
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Performanță animații */
+@media (prefers-reduced-motion: reduce) {
+    .benefit-item {
+        animation: none;
+        opacity: 1;
+    }
+
+    .letter-animation {
+        animation: none;
+        opacity: 1;
+    }
+
+    .header h1 {
+        animation: none;
+        text-shadow: 0 0 10px rgba(32, 188, 255, 0.5);
+    }
+}
