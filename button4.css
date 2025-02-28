@@ -83,3 +83,159 @@ p {
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+
+/* Media Queries pentru Responsive Design */
+@media screen and (max-width: 768px) {
+    .video-background {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100); /* Fix pentru mobile viewport */
+    }
+
+    #myVideo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        will-change: transform; /* Optimizare performanță */
+    }
+
+    .content {
+        padding: 1rem;
+        max-width: 100%;
+        margin-top: env(safe-area-inset-top); /* Suport pentru notch */
+        margin-bottom: env(safe-area-inset-bottom);
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .website-section,
+    .integration-section,
+    .animation-section,
+    .innovation-section {
+        padding: 1.5rem;
+        margin: 0.8rem 0;
+        width: calc(100% - 2rem);
+        backdrop-filter: blur(2px); /* Reduced blur for better performance */
+        -webkit-backdrop-filter: blur(2px);
+        touch-action: pan-y; /* Îmbunătățire scroll */
+    }
+
+    /* Optimizare touch targets */
+    h2, p {
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+    }
+
+    h2 {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+
+    p {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        padding: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .website-section,
+    .integration-section,
+    .animation-section,
+    .innovation-section {
+        padding: 1.2rem;
+        margin: 0.6rem 0;
+        border-radius: 8px;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .video-overlay {
+        background: rgba(0, 0, 0, 0.3); /* Slightly darker for better readability */
+    }
+}
+
+/* Landscape mode optimization */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .content {
+        padding: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    h1 {
+        grid-column: 1 / -1;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .website-section,
+    .integration-section,
+    .animation-section,
+    .innovation-section {
+        margin: 0.3rem 0;
+        padding: 1rem;
+    }
+}
+
+/* Touch device optimization */
+@media (hover: none) {
+    .website-section:hover,
+    .integration-section:hover,
+    .animation-section:hover,
+    .innovation-section:hover {
+        transform: none;
+        background: rgba(32, 32, 32, 0.4);
+    }
+}
+
+/* High-DPI screens optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .website-section,
+    .integration-section,
+    .animation-section,
+    .innovation-section {
+        border-width: 0.5px;
+    }
+}
+
+/* Battery saving */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    #myVideo {
+        display: none;
+    }
+
+    body {
+        background: #2a2a2a;
+    }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .content {
+        -webkit-overflow-scrolling: touch;
+    }
+}
