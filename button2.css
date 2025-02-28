@@ -222,3 +222,163 @@ p {
 .show {
     animation: glowIn 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) forwards;
 }
+
+/* Mobile Optimization */
+
+/* Base responsive settings */
+@media screen and (max-width: 1200px) {
+    .content-container {
+        max-width: 95%;
+        padding: 1.5rem;
+        gap: 3rem;
+    }
+
+    .workflow-items {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .content-overlay {
+        padding: 1rem;
+    }
+
+    .content-container {
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    .workflow-title {
+        font-size: 1.8rem;
+    }
+
+    .workflow-description {
+        font-size: 1.1rem;
+    }
+
+    .message, .workflow-section, .workflow-header {
+        padding: 1.5rem;
+    }
+
+    .workflow-items {
+        gap: 1.5rem;
+    }
+
+    .workflow-item {
+        padding: 1.5rem;
+    }
+
+    /* Ajustare animații pentru performanță mai bună pe mobile */
+    .hidden-left, .hidden-right {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    .show {
+        transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 1.5rem 0;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .workflow-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .workflow-description {
+        font-size: 1rem;
+    }
+
+    .workflow-item {
+        padding: 1.2rem;
+    }
+
+    h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* Optimizare efecte pentru dispozitive mobile */
+    .workflow-item:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Ajustare blur pentru performanță mai bună */
+    .message, .workflow-section, .workflow-header {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+/* Optimizare pentru landscape pe mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .content-container {
+        gap: 1.5rem;
+    }
+
+    .header {
+        padding: 1rem 0;
+    }
+
+    .workflow-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Optimizare pentru dispozitive cu touch */
+@media (hover: none) {
+    .workflow-item:hover {
+        transform: none;
+        background: rgba(103, 19, 155, 0.2);
+        box-shadow: 0 4px 15px rgba(138, 28, 212, 0.1);
+    }
+}
+
+/* Optimizare pentru economisirea bateriei */
+@media (prefers-reduced-motion: reduce) {
+    .header h1,
+    .workflow-title {
+        animation: none;
+    }
+
+    .workflow-item,
+    .message,
+    .workflow-section,
+    .workflow-header {
+        animation: none;
+        transition: opacity 0.5s ease;
+    }
+
+    .show {
+        animation: none;
+        transition: opacity 0.5s ease;
+    }
+}
+
+/* Optimizare video pentru mobile */
+@media screen and (max-width: 768px) {
+    #myVideo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
