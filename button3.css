@@ -184,22 +184,58 @@ p {
     }
 }
 
-/* Optimizări pentru tablete mai mici */
+/* Optimizări suplimentare pentru mobile */
+
 @media (min-width: 569px) and (max-width: 768px) {
     .content {
-        padding: 1.5rem;
+        padding: 0.8rem;
     }
 
     h1 {
-        font-size: calc(1.6rem + 1.5vw);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
 
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+
+/* Îmbunătățiri pentru performanță pe mobile */
+@media (max-width: 768px) {
+    /* Optimizare imagine background */
+    body {
+        background-image: url('Cyber.jpg'); /* Versiune optimizată pentru mobile */
+        background-attachment: initial; /* Îmbunătățește performanța pe iOS */
+    }
+
+    /* Reducere blur pentru performanță mai bună */
+    .content {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    /* Optimizare efecte hover/active */
     .security-section,
     .protection-section,
     .ecommerce-section,
     .maintenance-section {
-        padding: 1.5rem;
-        margin-bottom: 1.2rem;
+        transform: none;
+        will-change: auto; /* Optimizare memorie */
+    }
+
+    /* Touch target size optimization */
+    .security-section,
+    .protection-section,
+    .ecommerce-section,
+    .maintenance-section {
+        min-height: 44px; /* Minimum touch target size */
+        margin-bottom: 1.2rem; /* Spațiere pentru touch targets */
     }
 }
 
@@ -232,6 +268,20 @@ p {
     }
 }
 
+/* Optimizare pentru orientare landscape pe mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        height: auto;
+    }
+
+    h1 {
+        grid-column: 1 / -1;
+    }
+}
+
 /* Optimizări pentru performanță */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -239,5 +289,27 @@ p {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+
+    .security-section:hover,
+    .protection-section:hover,
+    .ecommerce-section:hover,
+    .maintenance-section:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* Optimizare pentru dispozitive cu densitate mare de pixeli */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        background-image: url('Cyber.jpg'); /* Versiune high-DPI */
+    }
+}
+
+/* Îmbunătățiri pentru scroll pe iOS */
+@supports (-webkit-touch-callout: none) {
+    .content {
+        -webkit-overflow-scrolling: touch;
     }
 }
