@@ -1,0 +1,16 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "Aplicație web pentru vânzarea de situri la comandă",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "dev": "live-server --port=3000",
+    "build": "mkdir -p dist && cp -R *.html *.css *.js *.jpg *.png *.mp4 dist/"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
