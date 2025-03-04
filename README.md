@@ -1,4 +1,10 @@
 
+
+
+
+This is my business idea during college. I have dedicated a lot of time to web applications, and I can even say that I enjoy working on them very much. I want to continuously improve my ability to create graphical interfaces that serve various functions. I have already built control panels, and I want to further develop my skills
+
+
 ![image](https://github.com/user-attachments/assets/10a497ab-13fc-49ef-acc8-d755f2cdee0a)
 ![image](https://github.com/user-attachments/assets/eb26d97c-9a04-47f6-9a2d-d001b23b9aad)
 ![image](https://github.com/user-attachments/assets/14f73c6b-a20b-4c12-b70c-71618c117518)
